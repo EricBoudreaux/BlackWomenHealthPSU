@@ -13,16 +13,21 @@ export default function Home() {
 
 const [screen, setScreen] = useState("home")
 
+const [sent, setSent] = useState(false)
+
 const messageRef = useRef()
 const ref = collection(firestore, "messages")
 
 
+
+
 const handleSave = async(e) => {
   e.preventDefault();
-  
+  setSent(true)
+
+
   let data = {
     message : messageRef.current.value,
-
   }
 
   try {
@@ -30,14 +35,12 @@ const handleSave = async(e) => {
   } catch(e){
     console.log(e)
   }
-
 }
-
   return (
 
 
 
-    <div className=' background'>
+    <div className='bg-fixed background'>
 
 {/* Home Page */}
     { screen == 'home' ? (
@@ -69,8 +72,19 @@ const handleSave = async(e) => {
           </div>
           <div className='w-full px-8 mx-auto '>
             <textarea ref={messageRef} rows={15} className='w-full rounded bg-[var(--white)] outline-none p-2'></textarea>
+
+            <div>
+              {!sent ? (
+                      <button onClick={handleSave} className='rounded-sm py-4 mx-auto mt-4 text-black hover:bg-[var(--orange)] hover:text-white duration-500 ease-in-out px-14 text-lg bg-[#E1E1E1] text-center'>SEND</button> 
+                  )
+                : (
+                  <button className='rounded-sm py-4 mx-auto mt-4 bg-[var(--orange)] text-white px-14 text-lg bg-[#E1E1E1] text-center'>SENT</button> 
+                )
+              }
+        
+            </div>
    
-            <button onClick={handleSave} className='rounded-sm py-4 mx-auto mt-4 text-black hover:bg-[var(--orange)] hover:text-white duration-500 ease-in-out px-14 text-lg bg-[#E1E1E1] text-center'>SEND</button> 
+         
    
           </div>
 
