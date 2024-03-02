@@ -4,12 +4,12 @@ import { getFirestore } from '@firebase/firestore';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAmRj8_J-Bf6Ri3e_a39WkI876a1CrxVkU",
-  authDomain: "blackwomenhealthpsu.firebaseapp.com",
-  projectId: "blackwomenhealthpsu",
-  storageBucket: "blackwomenhealthpsu.appspot.com",
-  messagingSenderId: "575114311450",
-  appId: "1:575114311450:web:aecb871698f99000405ea3"
+  apiKey: "AIzaSyC1iQaFVNyd0H9TQiMLMuQimivNHo0IZlA",
+  authDomain: "blackwomenhealthpsu-2f98c.firebaseapp.com",
+  projectId: "blackwomenhealthpsu-2f98c",
+  storageBucket: "blackwomenhealthpsu-2f98c.appspot.com",
+  messagingSenderId: "104961350506",
+  appId: "1:104961350506:web:d4f3de29d0e7da10956313"
 };
 
 // Initialize Firebase
